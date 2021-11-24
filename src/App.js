@@ -1,22 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(props) {
+
+  console.log(props.name)
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hey i'm a cool widget, my name is {props.name || 'undefined'}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <input placeholder="placeholder" />
+        <button onClick={() => props.passDownFunc()}>Call the function on the parent</button>
       </header>
     </div>
   );
